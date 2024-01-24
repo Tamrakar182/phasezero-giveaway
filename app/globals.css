@@ -186,7 +186,7 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    width: 50px;
+    width: 20px;
     background: linear-gradient(#ffffff,#ffefa0)
   }
   .box-lid {
@@ -199,7 +199,7 @@
     height: 40px;
     background-color: #cc231e;
     height: 40px;
-    min-width: 110px;
+    min-width: 120px;
     border-radius: 5%;
     box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
   }
@@ -211,7 +211,7 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    width: 50px;
+    width: 20px;
     background: linear-gradient(#ffefa0,#fff)
   }
   .box-bowtie {
@@ -220,9 +220,9 @@
   }
   .box-bowtie::before, .box-bowtie::after {
     content: "";
-    width: 23.3333333333px;
-    height: 23.3333333333px;
-    border: 5.6666666667px solid white;
+    width: 33.3333333333px;
+    height: 33.3333333333px;
+    border: 8.6666666667px solid #ffefa0;
     border-radius: 50% 50% 0 50%;
     position: absolute;
     bottom: 99%;
