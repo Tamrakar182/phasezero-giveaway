@@ -2,6 +2,7 @@
 import { useState } from "react";
 import GiftBox from "@/components/giftbox";
 import FormModal from "@/components/modal";
+import TimerCountdown from "@/components/Counter";
 
 export default function Home() {
   const [open, setOpen] = useState(false)
@@ -18,8 +19,8 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-black-100 content-container">
-      <h1 className="text-5xl font-bold uppercase">Giveaway</h1>
+    <main className="flex min-h-screen flex-col items-center p-24 bg-[#131313] content-container">
+      {/* <h1 className="text-5xl font-bold uppercase">Giveaway</h1>
       <p className="text-xl text-slate-500 text-center">Click one of these boxes to enter the giveaway</p>
       <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[760px] my-4">
         <div>
@@ -34,7 +35,8 @@ export default function Home() {
           <GiftBox onClick={() => handleGiftClick(60)} />
           <p className="text-xl text-center">Rs. 60</p>
         </div>
-      </div>
+      </div> */}
+      <TimerCountdown />
       <FormModal open={open} setOpen={handleModalClick} giftValue={giftValue} />
     </main>
   );
