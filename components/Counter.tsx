@@ -11,7 +11,7 @@ const Counter = ({ displayValue, label }: CounterProp) => (
         <span className="text-3xl">
             {displayValue}
         </span>
-        <h2 className="text-center text-[clamp(1rem, 2vw, 99rem)] font-bold tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-full">{label}</h2>
+        <h2 className="text-center text-[clamp(1rem, 1vw, 99rem)] font-bold tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-full">{label}</h2>
     </div>
 );
 
@@ -31,15 +31,15 @@ const TimerCountdown = () => {
     }, [targetDate]);
 
     return (
-        <div className="flex border border-stone-300 rounded-3xl">
-            <section className="m-auto p-4 md:px-9 md:py-7 text-center">
+        <div className="flex border border-stone-300 rounded-3xl justify-center max-w-[768px]">
+            <section className="m-auto p-4 md:px-9 md:py-7 text-center b">
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-x-8">
                     <Counter displayValue={timeDisplay.days} label={"Days"} />
                     <Counter displayValue={timeDisplay.hours} label={"Hours"} />
                     <Counter displayValue={timeDisplay.minutes} label={"Minutes"} />
                     <Counter displayValue={timeDisplay.seconds} label={"Seconds"} />
                 </div>
-                <h2 className="text-center text-gray-400 text-[clamp(1rem, 2vw, 99rem)] font-light tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-fit">
+                <h2 className="w-full text-center text-gray-400 text-[clamp(1rem, 2vw, 99rem)] font-light tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-fit">
                     Winner will be picked on: Jan 1, 2025 00:00:00
                 </h2>
             </section>

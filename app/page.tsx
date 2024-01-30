@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import GiftBox from "@/components/giftbox";
+import GiftBox from "@/components/Surprise"
 import FormModal from "@/components/modal";
 import TimerCountdown from "@/components/Counter";
 
@@ -19,25 +19,16 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-[#131313] content-container">
-      {/* <h1 className="text-5xl font-bold uppercase">Giveaway</h1>
-      <p className="text-xl text-slate-500 text-center">Click one of these boxes to enter the giveaway</p>
-      <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[760px] my-4">
-        <div>
-          <GiftBox onClick={() => handleGiftClick(20)} />
-          <p className="text-xl text-center">Rs. 20</p>
+    <div className="h-full w-full ">
+      <main className="flex min-h-screen flex-col items-center p-24  content-container">
+        <TimerCountdown />
+        <FormModal open={open} setOpen={handleModalClick} giftValue={giftValue} />
+        <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">
+          <GiftBox onClick={() => handleGiftClick(20)} description="Rs. 20" />
+          <GiftBox onClick={() => handleGiftClick(40)} description="Rs. 40" />
+          <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 60" />
         </div>
-        <div>
-          <GiftBox onClick={() => handleGiftClick(40)} />
-          <p className="text-xl text-center">Rs. 40</p>
-        </div>
-        <div>
-          <GiftBox onClick={() => handleGiftClick(60)} />
-          <p className="text-xl text-center">Rs. 60</p>
-        </div>
-      </div> */}
-      <TimerCountdown />
-      <FormModal open={open} setOpen={handleModalClick} giftValue={giftValue} />
-    </main>
+      </main>
+    </div>
   );
 }
