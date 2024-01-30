@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import Form from './form';
+import Form from './Form';
 
 type Props = {
     open: boolean;
@@ -40,7 +40,7 @@ export default function FormModal({ open, setOpen, giftValue }: Props) {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                            <Dialog.Panel className="relative transform overflow-hidden bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                                 <div className="w-full h-full flex flex-col items-center">
                                     <div>
                                         <div className="mt-3 text-center sm:mt-5">
@@ -60,14 +60,14 @@ export default function FormModal({ open, setOpen, giftValue }: Props) {
                                         <button
                                             type="submit"
                                             form="form"
-                                            className="inline-flex w-full justify-center rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                            className="inline-flex w-full justify-center shadow-sm px-3 py-2 bg-white text-base font-medium text-black border border-black hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                         >
                                             Submit
                                         </button>
 
                                         <button
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md border border-transparent shadow-sm px-3 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+                                            className="inline-flex w-full justify-center border border-transparent shadow-sm px-3 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                                             onClick={() => setOpen(false)}
                                         >
                                             Cancel

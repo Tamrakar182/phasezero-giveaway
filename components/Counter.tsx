@@ -31,7 +31,7 @@ const TimerCountdown = () => {
     }, [targetDate]);
 
     return (
-        <div className="flex border border-stone-300 rounded-3xl justify-center max-w-[768px]">
+        <div className="flex border border-gray-500 justify-center max-w-[768px]">
             <section className="m-auto p-4 md:px-9 md:py-7 text-center b">
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-x-8">
                     <Counter displayValue={timeDisplay.days} label={"Days"} />

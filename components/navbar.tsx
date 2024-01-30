@@ -5,11 +5,11 @@ import Link from "next/link"
 const Nav = () => {
   return (
     <div
-      className={clsx("fixed top-0 inset-x-0 z-10 group")}
+      className={clsx("sticky top-0 inset-x-0 z-10 group")}
     >
       <header
         className={clsx(
-          "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent",
+          "relative h-16 px-8 mx-auto transition-colors bg-[#131313] border-b border-gray-500 border-transparent",
         )}
       >
         <nav
