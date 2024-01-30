@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="h-full w-full ">
-      <main className="flex min-h-screen flex-col items-center p-24  content-container">
+      <main className="flex min-h-[90vh] flex-col items-center px-24 pt-20 content-container">
         <TimerCountdown />
         <FormModal open={open} setOpen={handleModalClick} giftValue={giftValue} />
         <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">

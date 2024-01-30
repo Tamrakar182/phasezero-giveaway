@@ -11,7 +11,7 @@ const footerNavigation = {
 
 const Footer = () => {
   return (
-    <div className="content-container flex flex-col justify-center items-center gap-y-8 pt-16 pb-8">
+    <div className="content-container flex flex-col justify-center items-center py-2">
         <span className="text-xsmall-regular text-gray-500">
           © Copyright 2024 Phase Zero
         </span>
