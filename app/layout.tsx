@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer"
-import Nav from "@/components/Navbar"
+import Footer from "@/components/footer";
+import Nav from "@/components/navbar";
 
 const bebasNeue = Bebas_Neue({
-  weight: '400',
+  weight: "400",
   subsets: ["latin-ext"],
   display: "swap",
 });
@@ -24,10 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-[#131313] ${bebasNeue.className}`}>
         <Nav />
-          {children}
+        {children}
         <Footer />
       </body>
     </html>
   );
 }
-
