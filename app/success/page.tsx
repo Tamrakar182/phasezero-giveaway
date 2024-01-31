@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
@@ -30,7 +30,17 @@ function Page() {
     // when you get response from backend
     // send user to landing page
   };
-  return <div>payment success</div>;
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+      <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
+      <p className="text-small-regular text-gray-400">
+        Successfully Purchased the GiftBox
+      </p>
+      <Link href="/" className="mt-4 underline text-base-regular text-white">
+        Go to frontpage
+      </Link>
+    </div>
+  );
 }
 
 export default Page;
