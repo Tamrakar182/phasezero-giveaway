@@ -27,11 +27,11 @@ export default function Home() {
           setOpen={handleModalClick}
           giftValue={giftValue}
         />
-        <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">
+        {/* <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">
           <GiftBox onClick={() => handleGiftClick(20)} description="Rs. 20" />
           <GiftBox onClick={() => handleGiftClick(40)} description="Rs. 40" />
           <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 60" />
-        </div>
+        </div> */}
         <div className="w-full grid place-content-center text-white text-3xl my-6">
           <h1>Phases of Phase Zero</h1>
         </div>

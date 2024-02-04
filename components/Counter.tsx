@@ -8,15 +8,17 @@ interface CounterProp {
 
 const Counter = ({ displayValue, label }: CounterProp) => (
     <div className="flex flex-col font-bold text-center text-white p-[2vw] pt-0">
-        <span className="text-3xl">
+        <span className="text-4xl">
             {displayValue}
         </span>
-        <h2 className="text-center text-[clamp(1rem, 1vw, 99rem)] font-bold tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-full">{label}</h2>
+        <h2 className="text-center text-[clamp(1.5rem, 1vw, 99rem)] font-bold tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-full">{label}</h2>
     </div>
 );
 
+const target = `Feb 29, 2024 00:00:00`
+
 const TimerCountdown = () => {
-    const targetDate = new Date(`Jan 1, 2025 00:00:00`).getTime();
+    const targetDate = new Date(target).getTime();
 
     const [timeDisplay, setTimeDisplay] = useState<TimeDisplayValues>({
         days: "00",
@@ -39,8 +41,8 @@ const TimerCountdown = () => {
                     <Counter displayValue={timeDisplay.minutes} label={"Minutes"} />
                     <Counter displayValue={timeDisplay.seconds} label={"Seconds"} />
                 </div>
-                <h2 className="w-full text-center text-gray-400 text-[clamp(1rem, 2vw, 99rem)] font-light tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-fit">
-                    Winner will be picked on: Jan 1, 2025 00:00:00
+                <h2 className="w-full text-center text-gray-400 text-[clamp(1.5rem, 2vw, 99rem)] font-light tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-fit">
+                    Winner will be picked on: {target}
                 </h2>
             </section>
         </div>

@@ -34,6 +34,9 @@ const config: Config = {
       fontFamily: {
         'roboto-mono': ['Roboto Mono', 'monospace'],
       },
+      backdropBrightness: {
+        25: '.25',
+      }
     },
   },
   plugins: [CustomStyle],

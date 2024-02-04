@@ -16,10 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#131313] ${bebasNeue.className}`}>
-        <Nav />
-        {children}
-        <Footer />
+      <body className={`bg-[url('/background.jpg')] bg-cover bg-center ${bebasNeue.className}`}>
+        <div className="w-full h-full backdrop-brightness-25 bg-black/30">
+          <Nav />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
