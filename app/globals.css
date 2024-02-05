@@ -17,6 +17,21 @@
     scrollbar-width: none; /* Firefox */
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e0cbcb;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
   .input-box > input:focus ~ label,
   .input-box > input:not(:placeholder-shown) ~ label {
     @apply -translate-y-2 text-xsmall-regular; 

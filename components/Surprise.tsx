@@ -28,7 +28,7 @@ export default function GiftBox({ onClick, description }: GiftBoxProps) {
             <div className="w-[200px] h-[200px] bg-transparent cursor-pointer">
                 <div className='relative w-full h-full'>
 
-                    {hover ? <div className="absolute w-full h-full bg-[#0F1823] bg-opacity-95 overflow-hidden flex flex-col justify-center items-center">
+                    {hover ? <div className="absolute w-full h-full bg-[#232424] bg-opacity-95 overflow-hidden flex flex-col justify-center items-center">
                         <p className="text-white text-lg">{description}</p>
                         <button
                             className="border-2 border-white px-4 py-2 mt-4 text-white font-bold uppercase"
