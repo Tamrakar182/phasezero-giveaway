@@ -31,7 +31,11 @@ function Page() {
     // send user to landing page
   };
   return (
-    <Suspense>
+    <Suspense fallback={
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+        <h1 className="text-2xl-semi text-white">Loading....</h1>
+      </div>
+    }>
       <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
         <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
         <p className="text-small-regular text-gray-400">
