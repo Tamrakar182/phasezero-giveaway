@@ -36,6 +36,7 @@ const ImageModel = ({ Image }: ImageModelProps) => {
             <img ref={imageRef} className="inset-0 h-auto max-w-full object-cover" src={Image.cover} alt={Image.alt} />
             {hover &&
                 <div className="absolute inset-0 bg-[#232424] bg-opacity-95 flex flex-col justify-center items-center p-6">
+                    <h1 className="text-white text-lg">#{Image.title}</h1>
                     <p className={`text-white text-sm max-h-[${imageRef.current?.clientHeight}px] overflow-y-auto`}>{Image.text}</p>
                 </div>
             }
