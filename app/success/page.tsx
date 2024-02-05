@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 
@@ -31,15 +31,17 @@ function Page() {
     // send user to landing page
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
-      <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
-      <p className="text-small-regular text-gray-400">
-        Successfully Purchased the GiftBox
-      </p>
-      <Link href="/" className="mt-4 underline text-base-regular text-white">
-        Go to frontpage
-      </Link>
-    </div>
+    <Suspense>
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+        <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
+        <p className="text-small-regular text-gray-400">
+          Successfully Purchased the GiftBox
+        </p>
+        <Link href="/" className="mt-4 underline text-base-regular text-white">
+          Go to frontpage
+        </Link>
+      </div>
+    </Suspense>
   );
 }
 
