@@ -25,7 +25,7 @@ const ImageModel = ({ Image }: ImageModelProps) => {
 
     return (
         <div
-            className={`border border-gray-500 p-3 relative h-fit max-w-full cursor-pointer`}
+            className={`relative h-fit max-w-full cursor-pointer`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             onClick={() => handleModalClick(true)}
