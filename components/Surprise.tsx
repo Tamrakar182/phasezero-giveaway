@@ -11,8 +11,6 @@ interface GiftBoxProps {
 
 
 export default function GiftBox({ onClick, description, remaining }: GiftBoxProps) {
-    // const [hover, setHover] = useState(false);
-
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -21,18 +19,12 @@ export default function GiftBox({ onClick, description, remaining }: GiftBoxProp
 
     return (
         <div
-            className={`grid place-content-center`}
+            className="w-[200px] h-[200px] p-4 bg-transparent cursor-pointer text-lg grid place-content-center text-white"
             onClick={onClick}
         >
-            <div className="w-[200px] h-[200px] bg-transparent cursor-pointer">
-                <div className='relative w-full h-full'>
-                    <div className="absolute">
-                        <Lottie options={defaultOptions} height={200} width={200} />
-                        <p className="text-white text-lg text-center">Remaining: {remaining} </p>
-                        <p className="text-white text-lg text-center">{description}</p>
-                    </div>
-                </div>
-            </div>
-        </div >
+            <Lottie options={defaultOptions} height={200} width={200} />
+            <p className="text-center">Remaining: {remaining} </p>
+            <p className="text-center">{description}</p>
+        </div>
     );
 }
