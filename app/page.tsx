@@ -27,16 +27,16 @@ export default function Home() {
           setOpen={handleModalClick}
           giftValue={giftValue}
         />
-        {/* <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">
-          <GiftBox onClick={() => handleGiftClick(20)} description="Rs. 9" />
-          <GiftBox onClick={() => handleGiftClick(40)} description="Rs. 24" />
-          <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 99" />
-          <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 999" />
-        </div> */}
-        <div className="w-full grid place-content-center text-white text-3xl my-6">
+        <div className="flex flex-col gap-4 lg:flex-row justify-between items-center w-full max-w-[768px] mt-12">
+          <GiftBox onClick={() => handleGiftClick(20)} description="Rs. 9" remaining="2024" />
+          <GiftBox onClick={() => handleGiftClick(40)} description="Rs. 29" remaining="400" />
+          <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 99" remaining="200" />
+          {/* <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 999" /> */}
+        </div>
+        {/* <div className="w-full grid place-content-center text-white text-3xl my-6">
           <h1>Phases of Phase Zero</h1>
         </div>
-        <Masonry />
+        <Masonry /> */}
       </main>
     </div>
   );

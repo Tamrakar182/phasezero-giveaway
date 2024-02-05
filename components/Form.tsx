@@ -5,6 +5,9 @@ type FormValues = {
   name: string;
   email: string;
   phoneNo: string;
+  address: string;
+  height: string;
+  weight: string;
 };
 
 type Props = {
@@ -21,6 +24,9 @@ const Form = ({ onSubmit }: Props) => {
       name: "",
       email: "",
       phoneNo: "",
+      address: "",
+      height: "",
+      weight: "",
     },
   });
 
@@ -69,6 +75,40 @@ const Form = ({ onSubmit }: Props) => {
         errors={errors}
         touched={touchedFields}
       />
+
+      <Input
+        id="address"
+        label="Address"
+        {...register("address", {
+          required: "Address is required",
+        })}
+        autoComplete="street-address"
+        errors={errors}
+      />
+
+      <div className="flex flex-row gap-3">
+        <Input
+          id="height"
+          label="Height (in cm)"
+          {...register("height", {
+            required: "Height is required",
+          })}
+          autoComplete="height"
+          errors={errors}
+        />
+
+        <Input
+          id="weight"
+          label="Weight (in kg)"
+          {...register("weight", {
+            required: "weight is required",
+          })}
+          autoComplete="weight"
+          errors={errors}
+        />
+      </div>
+
+
     </form>
   );
 };
