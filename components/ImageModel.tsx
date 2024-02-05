@@ -28,7 +28,10 @@ const ImageModel = ({ Image }: ImageModelProps) => {
             className={`relative h-fit max-w-full cursor-pointer`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            onClick={() => handleModalClick(true)}
+            onClick={() => {
+                handleModalClick(true);
+                setHover(false);
+            }}
         >
             <img ref={imageRef} className="inset-0 h-auto max-w-full object-cover" src={Image.cover} alt={Image.alt} />
             {hover &&
@@ -87,7 +90,7 @@ const Modal = ({ open, setOpen, images }: Props) => {
                                 >
                                     <XMarkIcon className="h-6 w-6 text-white" />
                                 </button>
-                                <div className="w-full h-full flex flex-row items-center">
+                                <div className="w-full h-full flex flex-col items-center">
                                     {images.map((image, index) => (
                                         <div key={index} className="h-[400px] w-[400px]">
                                             <img
