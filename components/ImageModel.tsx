@@ -93,7 +93,7 @@ const Modal = ({ open, setOpen, images }: Props) => {
                                 </button>
                                 <div className="w-full h-full flex flex-col items-center">
                                     {images.map((image, index) => (
-                                        <div key={index} className="h-[400px] w-[400px]">
+                                        <div key={index} className="h-[400px] w-[400px] overflow-hidden">
                                             <img
                                                 className="h-full w-full object-cover"
                                                 src={image}
