@@ -69,7 +69,7 @@ const stories: StoryType[] = [
         ]
     },
     {
-        cover: "/Website/KickOff/1.jpg",
+        cover: "/Website/KickOff/5.jpg",
         alt: "Kick-Off",
         text: "Days when results are announced can be stressful, especially if they are unknown. On the day when our clothing line was launching we felt a mix of excitement and fear, just like children nervously awaiting their test results. The want to miss the day remained. What will be the outcome? The  question kept on arising. June 17th 12:48am  Our fears were slowing conquer by a sense of achievement as the moment arrived and we saw the launch of our brand. We were relieved that our childishness we’ll call had paid off. Phase Zero's debut was an extraordinary success, justifying our efforts and increasing our brand's confidence. It was both an artwork and a time of great satisfaction. A minute’s success pays the failure of years.",
         title: "KICK-OFF",
