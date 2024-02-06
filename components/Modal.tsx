@@ -11,7 +11,7 @@ type Props = {
 
 export default function FormModal({ open, setOpen, giftValue }: Props) {
   const handleEsewaPayment = async () => {
-    const url = "http://localhost:8000/api/v1/create/order";
+    const url = "http://52.66.200.17:8080/api/v1/create/order";
     const data = {
       amount: 25,
       name: "dipesh",
@@ -20,8 +20,7 @@ export default function FormModal({ open, setOpen, giftValue }: Props) {
     };
     try {
       const response = await axios.post(url, data);
-      console.log(response?.data);
-      console.log(response?.data?.payload?.data.formData);
+
       if (response?.status === 200) {
         esewaCall(response?.data?.payload?.data.formData);
       } else {
@@ -104,8 +103,6 @@ export default function FormModal({ open, setOpen, giftValue }: Props) {
                   </div>
                   <Form onSubmit={handleFormSubmit} />
                   <div className="mt-5 sm:mt-6 gap-3 flex flex-row max-w-60 self-end">
-                    
-
                     <button
                       type="button"
                       className="inline-flex w-full justify-center shadow-sm px-3 py-2 bg-gray-700 text-base font-medium text-white border border-black hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
