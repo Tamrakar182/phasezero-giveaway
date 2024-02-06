@@ -8,7 +8,7 @@ interface CounterProp {
 
 const Counter = ({ displayValue, label }: CounterProp) => (
     <div className="flex flex-col font-bold text-center text-white p-[2vw] pt-0">
-        <span className="text-4xl">
+        <span className="text-[256px]">
             {displayValue}
         </span>
         <h2 className="text-center text-[clamp(1.5rem, 1vw, 99rem)] font-bold tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-full">{label}</h2>
