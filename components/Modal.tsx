@@ -11,9 +11,9 @@ type Props = {
 
 export default function FormModal({ open, setOpen, giftValue }: Props) {
   const handleEsewaPayment = async () => {
-    const url = "http://52.66.200.17:8080/api/v1/create/order";
+    const url = "https://api-pz.mindxcape.com/api/v1/create/order";
     const data = {
-      amount: 25,
+      amount: 9,
       name: "dipesh",
       email: "dipeshsah98@gmail.com",
       offerType: "basic",
