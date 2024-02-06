@@ -1,14 +1,9 @@
-const stats = [
-  { name: "Entries", value: "400/1000" },
-  { name: "Price", value: "Rs. 24" },
-];
-
-export default function Example() {
+export default function Example({ stats }: any) {
   return (
     <div className="bg-transparent min-w-[120px]">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2 lg:grid-cols-2">
-          {stats.map((stat) => (
+          {stats.map((stat: any) => (
             <div
               key={stat.name}
               className="bg-transparent px-4 py-6 sm:px-6 lg:px-8"

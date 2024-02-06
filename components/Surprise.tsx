@@ -28,7 +28,12 @@ export default function GiftBox({
     >
       <div className="flex sm:flex-row lg:flex-col items-center justify-center">
         <Lottie options={defaultOptions} height={200} width={200} />
-        <Stats />
+        <Stats
+          stats={[
+            { name: "Entries", value: `0/${remaining}` },
+            { name: "Price", value: description },
+          ]}
+        />
       </div>
     </div>
   );
