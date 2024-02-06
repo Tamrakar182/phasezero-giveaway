@@ -89,7 +89,7 @@ const Form = ({ onSubmit }: Props) => {
       <div className="flex flex-row gap-3">
         <Input
           id="height"
-          label="Height (in cm)"
+          label="Height (in ft)"
           {...register("height", {
             required: "Height is required",
           })}
@@ -107,8 +107,6 @@ const Form = ({ onSubmit }: Props) => {
           errors={errors}
         />
       </div>
-
-
     </form>
   );
 };

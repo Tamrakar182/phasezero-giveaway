@@ -27,10 +27,22 @@ export default function Home() {
           setOpen={handleModalClick}
           giftValue={giftValue}
         />
-        <div className="flex flex-col gap-16 lg:flex-row justify-between items-center w-full max-w-[768px] py-12">
-          <GiftBox onClick={() => handleGiftClick(20)} description="Rs. 9" remaining="2024" />
-          <GiftBox onClick={() => handleGiftClick(40)} description="Rs. 29" remaining="400" />
-          <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 99" remaining="200" />
+        <div className=" lg:mt-16 flex flex-col gap-20 lg:flex-row justify-between items-center w-full max-w-[768px] pt-12">
+          <GiftBox
+            onClick={() => handleGiftClick(20)}
+            description="Rs. 9"
+            remaining="2024"
+          />
+          <GiftBox
+            onClick={() => handleGiftClick(40)}
+            description="Rs. 29"
+            remaining="400"
+          />
+          <GiftBox
+            onClick={() => handleGiftClick(60)}
+            description="Rs. 99"
+            remaining="200"
+          />
           {/* <GiftBox onClick={() => handleGiftClick(60)} description="Rs. 999" /> */}
         </div>
         {/* <div className="w-full grid place-content-center text-white text-3xl my-6">

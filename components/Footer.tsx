@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const footerNavigation = {
   connect: [
@@ -7,16 +7,16 @@ const footerNavigation = {
     { name: "Instagram", href: "https://www.instagram.com/phasezero.clo/" },
     { name: "TikTok", href: "https://www.tiktok.com/@phasezero.clo" },
   ],
-}
+};
 
 const Footer = () => {
   return (
-    <div className="content-container flex flex-col justify-center items-center py-2">
-        <span className="text-sm text-gray-500">
-          © Copyright 2024 Phase Zero
-        </span>
+    <div className="content-container flex flex-col justify-center items-center py-10">
+      <span className="text-2xl text-gray-500">
+        © Copyright 2024 Phase Zero
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
