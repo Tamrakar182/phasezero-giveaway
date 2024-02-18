@@ -140,15 +140,20 @@ const Masonry = () => {
     const chunkedImages = chunkArray(stories, 3);
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 content-center items-start">
-            {chunkedImages.map((chunk, chunkIndex) => (
-                <div key={chunkIndex} className="grid gap-2">
-                    {chunk.map((image, index) => (
-                        <ImageModel key={index} Image={image} />
-                    ))}
-                </div>
-            ))}
-        </div>
+        <>
+            <div className="w-full grid place-content-center text-white text-3xl my-6">
+                <h1>Phases of Phase Zero</h1>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 content-center items-start">
+                {chunkedImages.map((chunk, chunkIndex) => (
+                    <div key={chunkIndex} className="grid gap-2">
+                        {chunk.map((image, index) => (
+                            <ImageModel key={index} Image={image} />
+                        ))}
+                    </div>
+                ))}
+            </div>
+        </>
     );
 };
 

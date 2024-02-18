@@ -15,9 +15,11 @@ const Counter = ({ displayValue, label }: CounterProp) => (
   </div>
 );
 
-const target = `Feb 29, 2024 00:00:00`;
+interface TimerCountdownProp {
+  target: string;
+}
 
-const TimerCountdown = () => {
+const TimerCountdown = ({ target }: TimerCountdownProp) => {
   const targetDate = new Date(target).getTime();
 
   const [timeDisplay, setTimeDisplay] = useState<TimeDisplayValues>({
@@ -28,10 +30,14 @@ const TimerCountdown = () => {
   });
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setTimeDisplay(generateTimeDisplay(targetDate)),
-      1000
-    );
+    const interval = setInterval(() => {
+      const newTimeDisplay = generateTimeDisplay(targetDate);
+      setTimeDisplay(newTimeDisplay);
+
+      if (newTimeDisplay.days === "00" && newTimeDisplay.hours === "00" && newTimeDisplay.minutes === "00" && newTimeDisplay.seconds === "00") {
+        clearInterval(interval);
+      }
+    }, 1000);
     return () => clearInterval(interval);
   }, [targetDate]);
 
