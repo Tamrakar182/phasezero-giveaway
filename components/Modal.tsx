@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Form from "./Form";
 import { handleEsewaPayment } from "@/utils/apiCalls";
+import { FormValues } from "./Form";
 
 type Props = {
   open: boolean;
@@ -11,10 +12,15 @@ type Props = {
 
 export default function FormModal({ open, setOpen, giftValue }: Props) {
 
-  const handleFormSubmit = async (data: any) => {
+  const handleFormSubmit = async (data: FormValues) => {
     // post data into backend
     console.log(data, giftValue);
-    await handleEsewaPayment();
+    await handleEsewaPayment({
+      amount: giftValue,
+      name: data.name,
+      email: data.email,
+      offerType: "basic",
+    });
     setOpen(false);
   };
 

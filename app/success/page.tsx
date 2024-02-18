@@ -1,52 +1,31 @@
-"use client";
 import Link from "next/link";
-import { useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import axios from "axios";
+import { postData } from "@/utils/apiCalls";
+import { notFound } from "next/navigation";
 
-function Page() {
-  const searchParams = useSearchParams();
-  const data = searchParams.get("data");
+export default async function SuccessPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  const data = searchParams["data"];
 
-  useEffect(() => {
-    if (data) postData(data);
-  }, [data]);
+  if (!data) {
+    notFound();
+  }
 
-  const postData = async (data: string) => {
-    // get data from query params
-    // send
-    const url = `http://localhost:8000/api/v1/esewa/success?data=${data}`;
-    try {
-      const response = await axios.get(url);
-      if (response?.status === 200) {
-        // redirect user to landing page
-        console.log(response.data);
-      } else {
-        console.error("Failed to create order");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    // when you get response from backend
-    // send user to landing page
-  };
+  const dataExists = await postData(data as string).catch((err) => {
+    notFound()
+  });
+
   return (
-    <Suspense fallback={
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
-        <h1 className="text-2xl-semi text-white">Loading....</h1>
-      </div>
-    }>
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
-        <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
-        <p className="text-small-regular text-gray-400">
-          Successfully Purchased the GiftBox
-        </p>
-        <Link href="/" className="mt-4 underline text-base-regular text-white">
-          Go to frontpage
-        </Link>
-      </div>
-    </Suspense>
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+      <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
+      <p className="text-small-regular text-gray-400">
+        Successfully Purchased the GiftBox
+      </p>
+      <Link href="/" className="mt-4 underline text-base-regular text-white">
+        Go to frontpage
+      </Link>
+    </div>
   );
 }
-
-export default Page;

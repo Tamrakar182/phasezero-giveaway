@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Input from "./Input";
 
-type FormValues = {
+export type FormValues = {
   name: string;
   email: string;
   phoneNo: string;
