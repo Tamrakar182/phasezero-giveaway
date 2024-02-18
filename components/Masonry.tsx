@@ -3,14 +3,14 @@ import ImageModel from "./ImageModel";
 
 const stories: StoryType[] = [
     {
-        cover: "/Website/Seeds/3.jpg",
+        cover: "/Website/Seeds/5.jpg",
         alt: "Seeds",
         text: "This is the story of how a mere comment about lacking vision set in motion a remarkable evolution, leading to the birth of Phase Zero. Phase Zero, born out of an idea that should never have existed, Just an egoistic move. Exactly like a toddler pushing for something they have no knowledge about. what they would be entering. We started PZ with a leap of faith and some ignorance.",
         title: "SEEDS",
         pictures: [
+            '/Website/Seeds/6.jpg',
             '/Website/Seeds/2.jpg',
             '/Website/Seeds/3.jpg',
-            '/Website/Seeds/4.jpg',
         ]
     },
     {
