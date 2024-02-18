@@ -13,7 +13,6 @@ type Props = {
 export default function FormModal({ open, setOpen, giftValue }: Props) {
 
   const handleFormSubmit = async (data: FormValues) => {
-    // post data into backend
     console.log(data, giftValue);
     await handleEsewaPayment({
       amount: giftValue,

@@ -1,4 +1,4 @@
-export default function Example({ stats }: any) {
+export default function Stats({ stats }: any) {
   return (
     <div className="bg-transparent min-w-[120px]">
       <div className="mx-auto max-w-7xl">

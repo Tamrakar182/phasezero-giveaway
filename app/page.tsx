@@ -6,7 +6,7 @@ import Masonry from "@/components/Masonry";
 import GiftBoxRow from "@/components/GiftBoxRow";
 
 // initial date for until masonry must be shown
-const targetedDate = 'Feb 18, 2024 17:52:00';
+const targetedDate = 'Feb 28, 2024 00:00:00';
 
 export default function Home() {
   const [open, setOpen] = useState<boolean>(false);
@@ -18,7 +18,7 @@ export default function Home() {
 
   const date = useMemo(() => {
     // new date for when giftboxes should be shown
-    return targetReached ? 'Feb 28, 2024 00:00:00' : targetedDate;
+    return targetReached ? 'Mar 31, 2024 00:00:00' : targetedDate;
   }, [targetReached]);
 
   const handleModalClick = (setValue: boolean) => {

@@ -5,6 +5,7 @@ interface GiftBoxRowProps {
 }
 
 export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
+    // backend call to get the remaining count of each gift
     return (
         <div className=" lg:mt-16 flex flex-col gap-20 lg:flex-row justify-between items-center w-full max-w-[768px] pt-12">
             <GiftBox
