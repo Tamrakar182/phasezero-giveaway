@@ -4,6 +4,7 @@ import FormModal from "@/components/Modal";
 import TimerCountdown from "@/components/Counter";
 import Masonry from "@/components/Masonry";
 import GiftBoxRow from "@/components/GiftBoxRow";
+import Spinner from "@/components/Spinner";
 
 // initial date for until masonry must be shown
 const targetedDate = "Feb 23, 2024 00:00:00";
@@ -39,7 +40,13 @@ export default function Home() {
   };
 
   // make loading beautiful
-  if (data.date === "") return null;
+  if (data.date === "") return (
+    <div className="h-full w-full ">
+      <main className="flex min-h-[90vh] flex-col items-center px-4 sm:px-24 py-4 justify-center">
+        <Spinner />
+      </main>
+    </div>
+  );
 
   return (
     <div className="h-full w-full ">
