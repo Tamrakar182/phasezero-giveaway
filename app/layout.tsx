@@ -5,8 +5,8 @@ import Nav from "@/components/Navbar";
 import { Bebas_Neue } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Phase Zero Giveaway",
-  description: "Page Made for Phase Zero Giveaway",
+  title: "Phase Zero",
+  description: "Made in mind",
 };
 
 const bebasNeue = Bebas_Neue({
