@@ -16,11 +16,11 @@ const Counter = ({ displayValue, label }: CounterProp) => (
 );
 
 interface TimerCountdownProp {
-  target: string;
+  target: any;
 }
 
 const TimerCountdown = ({ target }: TimerCountdownProp) => {
-  const targetDate = new Date(target).getTime();
+  const targetDate = new Date(target.date).getTime();
 
   const [timeDisplay, setTimeDisplay] = useState<TimeDisplayValues>({
     days: "00",
@@ -34,7 +34,12 @@ const TimerCountdown = ({ target }: TimerCountdownProp) => {
       const newTimeDisplay = generateTimeDisplay(targetDate);
       setTimeDisplay(newTimeDisplay);
 
-      if (newTimeDisplay.days === "00" && newTimeDisplay.hours === "00" && newTimeDisplay.minutes === "00" && newTimeDisplay.seconds === "00") {
+      if (
+        newTimeDisplay.days === "00" &&
+        newTimeDisplay.hours === "00" &&
+        newTimeDisplay.minutes === "00" &&
+        newTimeDisplay.seconds === "00"
+      ) {
         clearInterval(interval);
       }
     }, 1000);
@@ -51,7 +56,7 @@ const TimerCountdown = ({ target }: TimerCountdownProp) => {
           <Counter displayValue={timeDisplay.seconds} label={"Seconds"} />
         </div>
         <h2 className="w-full text-center text-gray-400 text-[clamp(1.5rem, 2vw, 99rem)] font-light tracking-wider overflow-hidden overflow-ellipsis whitespace-nowrap w-fit">
-          Winner will be picked on: {target}
+          {target.desc} {target.date}
         </h2>
       </section>
     </div>

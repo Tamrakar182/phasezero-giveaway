@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[url('/background.jpg')] bg-cover bg-center ${bebasNeue.className}`}>
+      <body
+        className={`bg-[url('/background.jpg')] bg-cover bg-center relative ${bebasNeue.className}`}
+      >
         <div className="w-full h-full backdrop-brightness-50 bg-black/30">
           <Nav />
           {children}
