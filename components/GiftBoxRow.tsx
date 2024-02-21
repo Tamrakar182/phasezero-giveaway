@@ -14,7 +14,7 @@ export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
                 remaining="2024"
                 height={125}
                 width={125}
-                worth={"Rs. 10,000"}
+                worth={"Rs. 5,000"}
             />
             <GiftBox
                 onClick={() => handleGiftClick(29)}
@@ -22,7 +22,7 @@ export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
                 remaining="400"
                 height={150}
                 width={150}
-                worth={"Rs. 50,000"}
+                worth={"Rs. 10,000"}
             />
             <GiftBox
                 onClick={() => handleGiftClick(99)}
@@ -30,7 +30,7 @@ export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
                 remaining="200"
                 height={175}
                 width={175}
-                worth={"Rs. 100,000"}
+                worth={"Rs. 15,000"}
             />
         </div>
     );
