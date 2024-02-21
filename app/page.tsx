@@ -5,6 +5,7 @@ import TimerCountdown from "@/components/Counter";
 import Masonry from "@/components/Masonry";
 import GiftBoxRow from "@/components/GiftBoxRow";
 import Spinner from "@/components/Spinner";
+import GiftBox from "@/components/Surprise";
 
 // initial date for until masonry must be shown
 const targetedDate = "Feb 20, 2024 17:40:00";
@@ -73,7 +74,18 @@ export default function Home() {
           offerValue={offerValue}
         />
         {targetReached ? (
-          <GiftBoxRow handleGiftClick={handleGiftClick} />
+          <div className="w-full h-full flex flex-col items-center justify-center">
+            <GiftBoxRow handleGiftClick={handleGiftClick} />
+            {/* <GiftBox
+                onClick={() => handleGiftClick(9999)}
+                description="Rs. 9999"
+                entries="1"
+                total="1"
+                height={200}
+                width={200}
+                worth={"Rs. 1,00,000"}
+            /> */}
+          </div>
         ) : (
           <Masonry />
         )}

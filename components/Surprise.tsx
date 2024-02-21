@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "@/public/lotties/gift.json";
 import Stats from "./Stats";
@@ -7,7 +6,8 @@ import Stats from "./Stats";
 interface GiftBoxProps {
   onClick: () => void;
   description: string;
-  remaining: string;
+  entries: string;
+  total: string;
   height: number;
   width: number;
   worth: string;
@@ -17,7 +17,8 @@ interface GiftBoxProps {
 export default function GiftBox({
   onClick,
   description,
-  remaining,
+  total,
+  entries,
   height,
   width,
   worth,
@@ -54,7 +55,7 @@ export default function GiftBox({
           </div>
           : <Stats
             stats={[
-              { name: "Entries", value: `0/${remaining}` },
+              { name: "Entries", value: `${entries}/${total}` },
               { name: "Price", value: description },
               { name: "Worth", value: worth },
             ]}
