@@ -12,6 +12,7 @@ const targetedDate = "Feb 20, 2024 17:40:00";
 export default function Home() {
   const [open, setOpen] = useState<boolean>(false);
   const [giftValue, setGiftValue] = useState<number>(0);
+  const [offerValue, setOfferValue] = useState<string>("");
   const [data, setData] = useState<any>({
     date: "",
     desc: "",
@@ -37,6 +38,19 @@ export default function Home() {
   const handleGiftClick = (value: number) => {
     handleModalClick(true);
     setGiftValue(value);
+    switch(value) {
+      case 9:
+        setOfferValue("Basic");
+        break;
+      case 29:
+        setOfferValue("Gold");
+        break;
+      case 99:
+        setOfferValue("Premium");
+        break;
+      default:
+        setOfferValue("");
+    }
   };
 
   // make loading beautiful
@@ -56,6 +70,7 @@ export default function Home() {
           open={open}
           setOpen={handleModalClick}
           giftValue={giftValue}
+          offerValue={offerValue}
         />
         {targetReached ? (
           <GiftBoxRow handleGiftClick={handleGiftClick} />

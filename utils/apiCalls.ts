@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const handleEsewaPayment = async (data: any) => {
-    const url = "https://api-pz.mindxcape.com/api/v1/create/order";
+    const url = `${process.env.API_URL}/create/order` as string;
     try {
         const response = await axios.post(url, data);
         if (response?.status === 200) {
@@ -16,7 +16,7 @@ export const handleEsewaPayment = async (data: any) => {
 
 export const esewaCall = (formData: any) => {
     console.log(formData);
-    const path = "https://rc-epay.esewa.com.np/api/epay/main/v2/form";
+    const path = process.env.ESEWA_URL as string;
     var form = document.createElement("form");
     form.setAttribute("method", "POST");
     form.setAttribute("action", path);
@@ -34,7 +34,7 @@ export const esewaCall = (formData: any) => {
 };
 
 export async function postData(data: string) {
-    const url = `https://api-pz.mindxcape.com/api/v1/esewa/success?data=${data}`;
+    const url = `${process.env.API_URL}/esewa/success?data=${data}`;
     try {
         const response = await axios.get(url);
         if (response?.status === 200) {

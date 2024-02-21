@@ -11,6 +11,7 @@ interface GiftBoxProps {
   height: number;
   width: number;
   worth: string;
+  soldOut?: boolean;
 }
 
 export default function GiftBox({
@@ -20,6 +21,7 @@ export default function GiftBox({
   height,
   width,
   worth,
+  soldOut,
 }: GiftBoxProps) {
   const defaultOptions = {
     loop: true,
@@ -36,13 +38,27 @@ export default function GiftBox({
         <div className="w-[175px] h-[175px] flex flex-col items-start justify-center">
           <Lottie options={defaultOptions} height={height} width={width} />
         </div>
-        <Stats
-          stats={[
-            { name: "Entries", value: `0/${remaining}` },
-            { name: "Price", value: description },
-            { name: "Worth", value: worth },
-          ]}
-        />
+        {soldOut ?
+          <div className="bg-transparent min-w-[130px]">
+            <div className="mx-auto max-w-7xl">
+              <div className=" bg-white/5 text-center">
+                <div
+                  className={`bg-transparent px-4 py-6 sm:px-6 lg:px-6 text-center`}
+                >
+                  <p className="text-1xl font-medium leading-6 text-gray-400 ">
+                    Sold Out
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          : <Stats
+            stats={[
+              { name: "Entries", value: `0/${remaining}` },
+              { name: "Price", value: description },
+              { name: "Worth", value: worth },
+            ]}
+          />}
       </div>
     </div>
   );

@@ -8,9 +8,10 @@ type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
   giftValue: number;
+  offerValue: string;
 };
 
-export default function FormModal({ open, setOpen, giftValue }: Props) {
+export default function FormModal({ open, setOpen, giftValue, offerValue }: Props) {
 
   const handleFormSubmit = async (data: FormValues) => {
     console.log(data, giftValue);
@@ -18,7 +19,11 @@ export default function FormModal({ open, setOpen, giftValue }: Props) {
       amount: giftValue,
       name: data.name,
       email: data.email,
-      offerType: "basic",
+      phone: data.phoneNo,
+      address: data.address,
+      weight: data.weight,
+      height: data.height,
+      offerType: offerValue,
     });
     setOpen(false);
   };
