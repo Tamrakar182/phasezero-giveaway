@@ -7,7 +7,7 @@ import GiftBoxRow from "@/components/GiftBoxRow";
 import Spinner from "@/components/Spinner";
 
 // initial date for until masonry must be shown
-const targetedDate = "Feb 23, 2024 00:00:00";
+const targetedDate = "Feb 20, 2024 17:40:00";
 
 export default function Home() {
   const [open, setOpen] = useState<boolean>(false);
