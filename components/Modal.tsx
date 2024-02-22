@@ -14,8 +14,7 @@ type Props = {
 export default function FormModal({ open, setOpen, giftValue, offerValue }: Props) {
 
   const handleFormSubmit = async (data: FormValues) => {
-    console.log(data, giftValue);
-    await handleEsewaPayment({
+    const res = await handleEsewaPayment({
       amount: giftValue,
       name: data.name,
       email: data.email,
@@ -25,6 +24,9 @@ export default function FormModal({ open, setOpen, giftValue, offerValue }: Prop
       height: data.height,
       offerType: offerValue,
     });
+    if (res === "error") {
+      alert("Error Occured");
+    }
     setOpen(false);
   };
 

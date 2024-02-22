@@ -6,16 +6,13 @@ export const handleEsewaPayment = async (data: any) => {
         const response = await axios.post(url, data);
         if (response?.status === 200) {
             esewaCall(response?.data?.payload?.data.formData);
-        } else {
-            console.error("Failed to create order");
         }
     } catch (error) {
-        console.log(error);
+        return 'error';
     }
 };
 
 export const esewaCall = (formData: any) => {
-    console.log(formData);
     const path = process.env.ESEWA_URL as string;
     var form = document.createElement("form");
     form.setAttribute("method", "POST");

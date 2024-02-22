@@ -45,6 +45,7 @@ const Form = ({ onSubmit }: Props) => {
         type="text"
         autoComplete="name"
         errors={errors}
+        touched={touchedFields}
       />
 
       <Input
@@ -55,6 +56,7 @@ const Form = ({ onSubmit }: Props) => {
         })}
         autoComplete="email"
         errors={errors}
+        touched={touchedFields}
       />
 
       <Input
@@ -84,6 +86,7 @@ const Form = ({ onSubmit }: Props) => {
         })}
         autoComplete="street-address"
         errors={errors}
+        touched={touchedFields}
       />
 
       <div className="flex flex-row gap-3">
@@ -95,6 +98,7 @@ const Form = ({ onSubmit }: Props) => {
           })}
           autoComplete="height"
           errors={errors}
+          touched={touchedFields}
         />
 
         <Input
@@ -105,6 +109,7 @@ const Form = ({ onSubmit }: Props) => {
           })}
           autoComplete="weight"
           errors={errors}
+          touched={touchedFields}
         />
       </div>
     </form>
