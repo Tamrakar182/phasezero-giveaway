@@ -8,7 +8,10 @@ import Spinner from "@/components/Spinner";
 import GiftBox from "@/components/Surprise";
 
 // initial date for until masonry must be shown
-const targetedDate = "Feb 23, 2024 00:00:00";
+const targetedDate =
+  process.env.NEXT_PUBLIC_NODE_ENV === "development"
+    ? "Feb 22, 2024 00:00:00"
+    : "Feb 23, 2024 00:00:00";
 
 export default function Home() {
   const [open, setOpen] = useState<boolean>(false);
@@ -39,7 +42,7 @@ export default function Home() {
   const handleGiftClick = (value: number) => {
     handleModalClick(true);
     setGiftValue(value);
-    switch(value) {
+    switch (value) {
       case 9:
         setOfferValue("Basic");
         break;
@@ -55,13 +58,14 @@ export default function Home() {
   };
 
   // make loading beautiful
-  if (data.date === "") return (
-    <div className="h-full w-full ">
-      <main className="flex min-h-[90vh] flex-col items-center px-4 sm:px-24 py-4 justify-center">
-        <Spinner />
-      </main>
-    </div>
-  );
+  if (data.date === "")
+    return (
+      <div className="h-full w-full ">
+        <main className="flex min-h-[90vh] flex-col items-center px-4 sm:px-24 py-4 justify-center">
+          <Spinner />
+        </main>
+      </div>
+    );
 
   return (
     <div className="h-full w-full ">
