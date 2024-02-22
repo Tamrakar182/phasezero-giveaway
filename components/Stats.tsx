@@ -12,7 +12,7 @@ export default function Stats({ stats }: any) {
                 {stat.name}
               </p>
               <p className="mt-2 flex items-center gap-x-2 flex-col justify-center">
-                <span className="text-3xl font-semibold tracking-tight text-white">
+                <span className="text-3xl lg:text-xl font-semibold tracking-tight text-white">
                   {stat.value}
                 </span>
               </p>
