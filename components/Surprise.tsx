@@ -2,6 +2,7 @@
 import Lottie from "react-lottie";
 import animationData from "@/public/lotties/gift.json";
 import Stats from "./Stats";
+import { useMediaQuery } from 'react-responsive';
 
 interface GiftBoxProps {
   onClick: () => void;
@@ -24,6 +25,8 @@ export default function GiftBox({
   worth,
   soldOut,
 }: GiftBoxProps) {
+  const isLargeScreen = useMediaQuery({ minWidth: 768 });
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -36,8 +39,8 @@ export default function GiftBox({
       onClick={onClick}
     >
       <div className="flex sm:flex-row lg:flex-col items-center justify-center">
-        <div className="w-[175px] h-[175px] flex flex-col items-start justify-center">
-          <Lottie options={defaultOptions} height={height} width={width} />
+        <div className="w-[200px] h-[200px] mg:w-[250px] md:h-[250px] flex flex-col items-start justify-center">
+          <Lottie options={defaultOptions} height={isLargeScreen ? height + 50 : height} width={isLargeScreen ? width + 50 : width} />
         </div>
         {soldOut ?
           <div className="bg-transparent min-w-[130px]">
