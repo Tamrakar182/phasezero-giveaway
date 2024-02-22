@@ -33,18 +33,16 @@ export const esewaCall = (formData: any) => {
     form.submit();
 };
 
-export async function postData(data: string) {
+export const postData = async (data: string) => {
     const url = `${process.env.API_URL}/esewa/success?data=${data}`;
     try {
         const response = await axios.get(url);
         if (response?.status === 200) {
-            // redirect user to landing page
-            console.log(response.data);
+            return response.data.payload.data
         } else {
-            console.error("Failed to create order");
+            throw Error
         }
     } catch (error) {
-        console.log(error)
         throw error
     }
-};
+  };

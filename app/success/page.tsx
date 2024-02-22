@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { notFound, redirect } from "next/navigation";
 import { postData } from "@/utils/apiCalls";
-import { notFound } from "next/navigation";
 
 export default async function SuccessPage({
   searchParams,
@@ -14,16 +14,20 @@ export default async function SuccessPage({
   }
 
   const dataExists = await postData(data as string).catch((err) => {
-    notFound()
+    redirect("/error");
   });
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
-      <h1 className="text-2xl-semi text-white">Sucessful Payment!</h1>
-      <p className="text-small-regular text-gray-400">
-        Successfully Purchased the GiftBox
+      <h1 className="text-4xl text-white">Sucessful Payment!</h1>
+      <p className="text-md text-gray-400">
+        Successfully Purchased the {dataExists.offerType} GiftBox
       </p>
-      <Link href="/" className="mt-4 underline text-base-regular text-white">
+      <p className="text-md text-gray-400">
+        Transaction Code:{dataExists.transactionCode}
+      </p>
+
+      <Link href="/" className="mt-4 underline text-lg text-white">
         Go to frontpage
       </Link>
     </div>
