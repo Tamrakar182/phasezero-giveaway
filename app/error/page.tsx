@@ -8,7 +8,7 @@ export default async function ErrorPage() {
         Please try again later
       </p>
       <Link href="/" className="mt-4 underline text-lg text-white">
-        Go to frontpage
+        Go to home
       </Link>
     </div>
   );

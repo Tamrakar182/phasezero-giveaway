@@ -28,7 +28,7 @@ export default async function SuccessPage({
       </p>
 
       <Link href="/" className="mt-4 underline text-lg text-white">
-        Go to frontpage
+        Go to home
       </Link>
     </div>
   );

@@ -46,3 +46,17 @@ export const postData = async (data: string) => {
         throw error
     }
   };
+
+export const recordData = async () => {
+    const url = `${process.env.API_URL}/records/`;
+    try {
+        const response = await axios.get(url);
+        if (response.status === 200) {
+            return response.data.payload.data
+        } else {
+            throw Error
+        }
+    } catch (error) {
+        throw error;
+    }
+}
