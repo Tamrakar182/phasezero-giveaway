@@ -74,10 +74,10 @@ export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
                 soldOut={soldOut["Gold"]}
             />
             <GiftBox
-                onClick={() => handleBoxClick(99, 1, getEntries("Premium"))}
+                onClick={() => handleBoxClick(99, 200, getEntries("Premium"))}
                 description="Rs. 99"
                 entries={getEntries("Premium")}
-                total="1"
+                total="200"
                 height={175}
                 width={175}
                 worth={"Rs. 15,000"}
