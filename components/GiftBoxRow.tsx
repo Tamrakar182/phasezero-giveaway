@@ -32,7 +32,7 @@ export default function GiftBoxRow({ handleGiftClick }: GiftBoxRowProps) {
             const soldOut = {
                 Basic: parseInt(data.find((entry: any) => entry.offerType === "Basic")?._count._all) >= 2024,
                 Gold: parseInt(data.find((entry: any) => entry.offerType === "Gold")?._count._all) >= 400,
-                Premium: parseInt(data.find((entry: any) => entry.offerType === "Premium")?._count._all) >= 1,
+                Premium: parseInt(data.find((entry: any) => entry.offerType === "Premium")?._count._all) >= 200,
             };
             setSoldOut(soldOut);
         };
