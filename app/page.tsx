@@ -70,29 +70,14 @@ export default function Home() {
   return (
     <div className="h-full w-full ">
       <main className="flex min-h-[90vh] flex-col items-center px-4 sm:px-24 py-4 content-container">
-        <TimerCountdown target={data} />
         <FormModal
           open={open}
           setOpen={handleModalClick}
           giftValue={giftValue}
           offerValue={offerValue}
         />
-        {targetReached ? (
-          <div className="w-full h-full flex flex-col items-center justify-center">
-            <GiftBoxRow handleGiftClick={handleGiftClick} />
-            {/* <GiftBox
-                onClick={() => handleGiftClick(9999)}
-                description="Rs. 9999"
-                entries="1"
-                total="1"
-                height={200}
-                width={200}
-                worth={"Rs. 1,00,000"}
-            /> */}
-          </div>
-        ) : (
-          <Masonry />
-        )}
+
+        <Masonry />
       </main>
     </div>
   );
